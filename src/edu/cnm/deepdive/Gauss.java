@@ -6,14 +6,11 @@ public class Gauss {
 
   public static void main(String[] args) {
     try {
-      long sum = 0;
       int upperBound = args.length > 0 ? Integer.parseInt(args[0]) : DEFAULT_UPPER_BOUND;
       if (upperBound <= 0) {
         throw new IllegalArgumentException();
       }
-      for (int i = 1; i <= upperBound; i++) {
-        sum += i;
-      }
+      long sum = (long) (upperBound + 1) * upperBound / 2;
       System.out.println(sum);
     }catch (IllegalArgumentException e) {
       System.out.printf("Upper bound must be in the range 1...%d%n", Integer.MAX_VALUE);
